@@ -44,6 +44,7 @@ int main() {
         
     } while (i != -1);
     
+    //number inputs
     cout << endl << "Please enter a number";
     cin >> num1;
     
@@ -66,12 +67,14 @@ int main() {
             break;
     }
     
-    
+    //result output
     cout << endl << "Result is " << result << endl;
     
     return 0;
 }
 
+
+//functions for calculations
 int additionCalc(int n1, int n2)
 {
     int r;
