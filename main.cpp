@@ -9,6 +9,7 @@
 
 using namespace std;
 
+//prototypes for functions
 int additionCalc(int, int);
 int subtractionCalc(int, int);
 int divisionCalc(int, int);
@@ -21,9 +22,27 @@ int main() {
     int result;
     
     cout << "This program takes two numbers and preforms a basic mathematical function." << endl << endl;
-    cout << "Please enter an operator: (+, -, /, *)" << endl;
     
-    cin >> operation;
+    //loop to make sure correct operator is input
+    int i = 0;
+    do {
+        cout << "Please enter an operator: (+, -, /, *)" << endl;
+        cin >> operation;
+        
+        switch (operation) {
+            case '+':
+            case '-':
+            case '*':
+            case '/':
+                i = -1;
+                break;
+                
+            default:
+                i = 0;
+                break;
+        }
+        
+    } while (i != -1);
     
     cout << endl << "Please enter a number";
     cin >> num1;
@@ -43,7 +62,6 @@ int main() {
             break;
             
         default:
-            cout << "An incorrect operation was typed";
             result = 0;
             break;
     }
