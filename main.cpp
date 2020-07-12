@@ -57,12 +57,16 @@ int main() {
     switch (operation) {
         case '+':
             result = additionCalc(num1, num2);
+            break;
         case '-':
             result = subtractionCalc(num1, num2);
+            break;
         case '*':
             result = multiplicationCalc(num1, num2);
+            break;
         case '/':
             result = divisionCalc(num1, num2);
+            break;
         case '^':
             result = powerCalc(num1, num2);
             break;
