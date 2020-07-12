@@ -6,27 +6,29 @@
 //  Kevin Dao
 
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
 //prototypes for functions
-int additionCalc(int, int);
-int subtractionCalc(int, int);
-int divisionCalc(int, int);
-int multiplicationCalc(int, int);
+double additionCalc(double, double);
+double subtractionCalc(double, double);
+double divisionCalc(double, double);
+double multiplicationCalc(double, double);
+double powerCalc(double, double);
 
 int main() {
     
     char operation;
-    int num1, num2;
-    int result;
+    double num1, num2;
+    double result;
     
     cout << "This program takes two numbers and preforms a basic mathematical function." << endl << endl;
     
     //loop to make sure correct operator is input
     int i = 0;
     do {
-        cout << "Please enter an operator: (+, -, /, *)" << endl;
+        cout << "Please enter an operator: (+, -, /, *, ^)" << endl;
         cin >> operation;
         
         switch (operation) {
@@ -34,6 +36,7 @@ int main() {
             case '-':
             case '*':
             case '/':
+            case '^':
                 i = -1;
                 break;
                 
@@ -45,10 +48,10 @@ int main() {
     } while (i != -1);
     
     //number inputs
-    cout << endl << "Please enter a number";
+    cout << endl << "Please enter a number -> ";
     cin >> num1;
     
-    cout << endl << "Please enter another number";
+    cout << endl << "Please enter another number -> ";
     cin >> num2;
     
     switch (operation) {
@@ -60,6 +63,8 @@ int main() {
             result = multiplicationCalc(num1, num2);
         case '/':
             result = divisionCalc(num1, num2);
+        case '^':
+            result = powerCalc(num1, num2);
             break;
             
         default:
@@ -75,38 +80,47 @@ int main() {
 
 
 //functions for calculations
-int additionCalc(int n1, int n2)
+double additionCalc(double n1, double n2)
 {
-    int r;
+    double r;
     
     r = n1 + n2;
     
     return r;
 }
 
-int subtractionCalc(int n1, int n2)
+double subtractionCalc(double n1, double n2)
 {
-    int r;
+    double r;
     
     r = n1 - n2;
     
     return r;
 }
 
-int multiplicationCalc(int n1, int n2)
+double multiplicationCalc(double n1, double n2)
 {
-    int r;
+    double r;
     
     r = n1 * n2;
     
     return r;
 }
 
-int divisionCalc(int n1, int n2)
+double divisionCalc(double n1, double n2)
 {
-    int r;
+    double r;
     
     r = n1 / n2;
+    
+    return r;
+}
+
+double powerCalc(double n1, double n2)
+{
+    double r;
+    
+    r = pow(n1, n2);
     
     return r;
 }
